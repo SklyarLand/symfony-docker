@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
   php-fpm:
-    image: devilbox/php-fpm-8.0
+    image: webdevops/php-dev:7.4
     hostname: php-fpm
     volumes:
       - "./:/app"
@@ -30,3 +30,10 @@ services:
       - "./:/app"
     depends_on:
       - php-fpm
+  composer:
+    restart: "no"
+    image: composer:1.8.5
+    command: install --ignore-platform-reqs
+    working_dir: "/app"
+    volumes:
+      - "./:/app"
