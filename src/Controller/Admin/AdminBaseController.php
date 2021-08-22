@@ -7,7 +7,7 @@ class AdminBaseController extends \Symfony\Bundle\FrameworkBundle\Controller\Abs
     public static function renderDefault()
     {
         return [
-            'title' => 'Изучение Symfony 5 - Панель'
+            'title' => 'Панель'
         ];
     }
 }
